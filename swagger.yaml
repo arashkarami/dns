@@ -1,0 +1,47 @@
+basePath: /
+consumes:
+    - application/json
+definitions:
+    LocationResponse:
+        x-go-package: housinganywhere/dns/app/models
+host: localhost:5001
+info:
+    description: Documentation for Drone Navigation System API
+    version: 1.0.0
+paths:
+    /navigation:
+        post:
+            description: Calculate navigation of drone
+            operationId: locationRequest
+            parameters:
+                - description: 'type: string'
+                  in: body
+                  name: x
+                  schema:
+                    type: string
+                  x-go-name: X
+                - in: query
+                  name: "y"
+                  type: string
+                  x-go-name: "Y"
+                - in: query
+                  name: z
+                  type: string
+                  x-go-name: Z
+                - in: query
+                  name: vel
+                  type: string
+                  x-go-name: Vel
+            responses:
+                "200":
+                    description: LocationResponse
+                    schema:
+                        $ref: '#/definitions/LocationResponse'
+            security:
+                - apiKey:
+                    - '[]'
+produces:
+    - application/json
+schemes:
+    - http
+swagger: "2.0"
