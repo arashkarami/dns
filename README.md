@@ -16,7 +16,7 @@ It can be editable through: `.env`
 `docker build -t dns .`  
 `docker run -p 5001:5001 -d dns:latest`
 
-Location endpoint serves under http://localhost:5001/api/v1  
+Location endpoint serves under swagger document http://localhost:5001/docs
 Healtcheck endpoint serves under http://localhost:5001/api/v1/health
 
 FUTURE

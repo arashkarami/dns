@@ -16,7 +16,7 @@ import (
 //
 // responses:
 //
-//	200: LocationResponse
+//	200: locationResponse
 func (a *App) NavigationHandler() http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
 		if r.Method != http.MethodPost {

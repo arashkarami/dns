@@ -1,15 +1,12 @@
 basePath: /
 consumes:
     - application/json
-definitions:
-    LocationResponse:
-        x-go-package: housinganywhere/dns/app/models
 host: localhost:5001
 info:
     description: Documentation for Drone Navigation System API
     version: 1.0.0
 paths:
-    /navigation:
+    /api/v1/navigation:
         post:
             description: Calculate navigation of drone
             operationId: locationRequest
@@ -34,14 +31,19 @@ paths:
                   x-go-name: Vel
             responses:
                 "200":
-                    description: LocationResponse
-                    schema:
-                        $ref: '#/definitions/LocationResponse'
+                    $ref: '#/responses/locationResponse'
             security:
                 - apiKey:
                     - '[]'
 produces:
     - application/json
+responses:
+    locationResponse:
+        description: ""
+        headers:
+            loc:
+                format: double
+                type: number
 schemes:
     - http
 swagger: "2.0"

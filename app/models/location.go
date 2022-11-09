@@ -21,7 +21,7 @@ type Location struct {
 	Vel float64 `json:"vel"`
 }
 
-// swagger:model LocationResponse
+// swagger:response locationResponse
 type LocationResponse struct {
 	Loc float64 `json:"loc"`
 }
